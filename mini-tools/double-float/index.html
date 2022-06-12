@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双精度浮点数的存储</title>
+    <style>
+        input {
+            width: 300px;
+            height: 32px;
+            outline: none;
+            border-radius: 4px;
+            margin: 50px 0;
+            padding: 0 10px;
+            font-size: 16px;
+            border: 2px solid #c4c7ce;
+        }
+        span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 30px;
+        }
+        .grey {
+            border: 1px dashed #c4c7ce;
+            background-color: #c4c7ce;;
+            color: white;
+            font-weight: bold;
+        }
+        .square {
+            border: 1px solid #c4c7ce;
+        }
+        .sign {
+            background-color: lightblue;
+        }
+        .exponent {
+            background-color: lightgreen;
+        }
+        .fraction {
+            background-color: lightpink;
+        }
+        p span {
+            margin: 0;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" placeholder="请输入数字"/>
+    <div class="container"></div>
+    <div>
+        <p><span class="sign"></span> sign</p>
+        <p><span class="exponent"></span> exponent</p>
+        <p><span class="fraction"></span> fraction</p>
+        <p><span class="grey"></span> 二进制有效位首位必为 1</p>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

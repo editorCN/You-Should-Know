@@ -20,7 +20,7 @@
 
 `JavaScript` 采用 IEEE 754 双精度浮点型标准，众所周知，计算机中存储的都是二进制，而 0.1、0.2 转成二进制都是无限循环小数，由于 IEEE 754 双精度浮点型标准只能存储 64 bit，所以会对超出的小数部分进行取舍，造成精度丢失 
 
-0.1 的二进制表示方法如下（也可以[点击这里](/index.html)）：
+0.1 的二进制表示方法如下（也可以[点击这里](https://editorcn.github.io/You-Should-Know/mini-tools/double-float/)）：
 
 ```js
 /*

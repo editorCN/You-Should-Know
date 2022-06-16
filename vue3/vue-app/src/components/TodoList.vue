@@ -1,8 +1,12 @@
 <script setup>
 import { computed } from '@vue/reactivity'
-import { ref, watch } from 'vue'
+import { ref, watch, watchEffect } from 'vue'
+import { useStorage } from '../utils'
 const title = ref('')
-const todoList = ref(localStorage['todoList'] ? JSON.parse(localStorage['todoList']) : [])
+// 3. 
+const todoList = useStorage('todoList', [])
+// 1. / 2.
+// const todoList = ref(localStorage['todoList'] ? JSON.parse(localStorage['todoList']) : [])
 const add = _ => {
   todoList.value.push({title: title.value, done: false})
   title.value = ''
@@ -20,9 +24,14 @@ const allDone = computed({
     todoList.value.forEach(todo => todo.done = val)
   }
 })
-watch(todoList, (newValue) => {
-  localStorage['todoList'] = JSON.stringify(newValue)
-}, {deep: true})
+// 1.
+// watch(todoList, (newValue) => {
+//   localStorage['todoList'] = JSON.stringify(newValue)
+// }, {deep: true})
+// 2.
+// watchEffect(_ => {
+//   localStorage['todoList'] = JSON.stringify(todoList.value)
+// })
 </script>
 
 <template>
